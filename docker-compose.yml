@@ -1,0 +1,18 @@
+version: '2'
+services:
+  es:
+    build: .
+    ports:
+      - '9300'
+      - '9200'
+    tmpfs: /tmp
+  es-test:
+    build: .
+    ports:
+      - '9350:9300'
+      - '9250:9200'
+    tmpfs: /tmp
+  redis:
+    image: redis
+    ports:
+      - '6379'
