@@ -1,3 +1,3 @@
-FROM elasticsearch:2.4-alpine
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.4.1
 
-RUN plugin install analysis-icu
+RUN elasticsearch-plugin install analysis-icu

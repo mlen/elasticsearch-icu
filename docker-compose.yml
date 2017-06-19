@@ -1,17 +1,19 @@
 version: '2'
 services:
   es:
-    build: .
+    extends:
+      file: common.yml
+      service: common
     ports:
       - '9300:9300'
       - '9200:9200'
-    tmpfs: /tmp
   es-test:
-    build: .
+    extends:
+      file: common.yml
+      service: common
     ports:
       - '9350:9300'
       - '9250:9200'
-    tmpfs: /tmp
   redis:
     image: redis
     ports:

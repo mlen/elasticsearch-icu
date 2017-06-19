@@ -1,0 +1,8 @@
+version: '2'
+services:
+  common:
+    build: .
+    environment:
+      - "http.host=0.0.0.0"
+      - "transport.host=127.0.0.1"
+    tmpfs: /tmp:exec
